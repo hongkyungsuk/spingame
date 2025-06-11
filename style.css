@@ -1,0 +1,150 @@
+/* 전체 페이지에 넥슨고딕체 적용 및 배경색 설정 */
+body {
+  /* 넥슨고딕 웹폰트 적용 */
+  font-family: 'NEXON Gothic', sans-serif;
+  /* 배경색을 밝고 깔끔하게 설정 */
+  background: #f8fafc;
+  /* 마진 제거 */
+  margin: 0;
+  /* 전체 높이 사용 */
+  min-height: 100vh;
+}
+
+/* 중앙 정렬 및 반응형 레이아웃을 위한 컨테이너 */
+.container {
+  /* 최대 너비 제한 */
+  max-width: 480px;
+  /* 중앙 정렬 */
+  margin: 0 auto;
+  /* 상하 여백 */
+  padding: 32px 16px 0 16px;
+  /* box-sizing 설정 */
+  box-sizing: border-box;
+}
+
+/* 게임 제목 스타일 */
+.title {
+  /* 중앙 정렬 */
+  text-align: center;
+  /* 글자 크기 크게 */
+  font-size: 2.2rem;
+  /* 두껍게 */
+  font-weight: 700;
+  /* 여백 */
+  margin-bottom: 24px;
+  /* 글자 색상 */
+  color: #222;
+  /* 텍스트 그림자 효과로 가시성 향상 */
+  text-shadow: 0 2px 8px #fff, 0 1px 0 #ccc;
+}
+
+/* 원판, 결과, 버튼을 감싸는 영역 */
+.roulette-area {
+  /* 중앙 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 여백 */
+  gap: 24px;
+}
+
+/* 원판 캔버스 스타일 */
+#wheel {
+  /* 반응형: 최대 너비 제한 */
+  width: 100%;
+  max-width: 400px;
+  /* 그림자 효과로 입체감 */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 0 #eee;
+  /* 배경색 */
+  background: #fff;
+  /* 테두리 둥글게 */
+  border-radius: 50%;
+  /* 테두리 */
+  border: 4px solid #e0e7ef;
+}
+
+/* 결과 표시 영역 스타일 */
+.result {
+  /* 글자 크기 매우 크게 */
+  font-size: 2rem;
+  /* 두껍게 */
+  font-weight: 900;
+  /* 중앙 정렬 */
+  text-align: center;
+  /* 여백 */
+  margin: 12px 0 0 0;
+  /* 글자 색상 */
+  color: #e11d48;
+  /* 텍스트 그림자 효과 */
+  text-shadow: 0 2px 8px #fff, 0 1px 0 #ccc;
+  /* 최소 높이로 레이아웃 안정화 */
+  min-height: 2.5em;
+}
+
+/* 룰렛 시작 버튼 스타일 */
+.spin-btn {
+  /* 넓이 100%로 반응형 */
+  width: 100%;
+  max-width: 320px;
+  /* 패딩 */
+  padding: 18px 0;
+  /* 글자 크기 */
+  font-size: 1.3rem;
+  /* 두껍게 */
+  font-weight: 700;
+  /* 배경색: 강렬한 레드 */
+  background: linear-gradient(90deg, #e11d48 0%, #f43f5e 100%);
+  /* 글자색: 흰색 */
+  color: #fff;
+  /* 테두리 없음 */
+  border: none;
+  /* 둥근 모서리 */
+  border-radius: 12px;
+  /* 그림자 */
+  box-shadow: 0 2px 8px rgba(225,29,72,0.12);
+  /* 커서 포인터 */
+  cursor: pointer;
+  /* 트랜지션 효과 */
+  transition: background 0.2s, transform 0.1s;
+}
+
+/* 버튼 호버 효과 */
+.spin-btn:hover {
+  /* 더 진한 배경색 */
+  background: linear-gradient(90deg, #be123c 0%, #e11d48 100%);
+  /* 살짝 확대 */
+  transform: scale(1.03);
+}
+
+/* 폭죽/축하 효과 컨테이너 */
+#confetti {
+  /* 폭죽 효과가 캔버스 위에 겹치도록 위치 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* 반응형: 모바일에서 캔버스 크기 조정 */
+@media (max-width: 480px) {
+  #wheel {
+    max-width: 90vw;
+    height: auto;
+  }
+  .container {
+    padding: 16px 4px 0 4px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .result {
+    font-size: 1.2rem;
+  }
+  .spin-btn {
+    font-size: 1rem;
+    padding: 14px 0;
+  }
+} 
